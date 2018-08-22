@@ -121,3 +121,14 @@
 		}
 	}
 }
+
+//--------------------------------------------------------------
+//	Above or below below certain breakpoint
+//--------------------------------------------------------------
+@mixin above($widthOrBreakpoint, $includeWidth:false) {
+
+}
+
+@mixin below($widthOrBreakpoint, $includeWidth:false) {
+
+}
