@@ -70,7 +70,7 @@
 			#{$property}: $min + 0px;
 		}
 	}
-	
+
 	@if $clip and $clipAtEnd {
 		@media (min-width: #{$end + 0px}) {
 			#{$property}: $max + 0px;
