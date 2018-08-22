@@ -8,6 +8,9 @@ $grid-gutter: 30px;
 // Fonts / Typography
 $font-base: sans-serif;
 $font-browser-context: 16px;
+
+//? Use the desktop and mobile context to calculate breakpoints?
+$browser-mobile-context: 375px;
 $browser-desktop-context: 1920px;
 
 // Variant 1: Mediq Queries

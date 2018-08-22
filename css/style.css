@@ -1,3 +1,5 @@
+/* Start and end should come from */
+/* Start and end should come from */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, em, img, q, s, samp, small, strike, strong, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, section, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; }
@@ -30,6 +32,8 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 
 table { border-collapse: collapse; border-spacing: 0; }
 
+/* Start and end should come from */
+/* Start and end should come from */
 body, html { font-family: sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -moz-font-feature-settings: 'liga' on; }
 
 html { -ms-overflow-style: scrollbar; box-sizing: border-box; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 16px; }

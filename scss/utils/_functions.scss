@@ -1,56 +1,56 @@
 @import "../settings";
 
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+	@return $value / ($value * 0 + 1);
 }
 
 //--------------------------------------------------------------
 //  Liquid styles
 //--------------------------------------------------------------
 @function fixed-to-fluid($target-width, $context-width:false) {
-  //Process ratio
-  @if (type-of($target-width) == "number" and unitless($target-width) and $context-width == false) {
-    @return percentage($target-width);
-  }
+	//Process ratio
+	@if (type-of($target-width) == "number" and unitless($target-width) and $context-width == false) {
+		@return percentage($target-width);
+	}
 
-  //Process target and context
-  @if (comparable($target-width, $context-width)) {
-    @return percentage($target-width / $context-width);
-  }
+	//Process target and context
+	@if (comparable($target-width, $context-width)) {
+		@return percentage($target-width / $context-width);
+	}
 }
 
 @function em($pixels, $context:$font-browser-context) {
-  $pixels: strip-unit($pixels);
-  $context: strip-unit($context);
-  @return ($pixels / $font-browser-context) * 1em;
+	$pixels: strip-unit($pixels);
+	$context: strip-unit($context);
+	@return ($pixels / $font-browser-context) * 1em;
 }
 
 @function vw($pixels, $viewportWidth:$browser-desktop-context) {
-  $viewportWidth: strip-unit($viewportWidth);
-  $vw-context: ($viewportWidth*.01) * 1px;
-  @return ($pixels/$vw-context) * 1vw;
+	$viewportWidth: strip-unit($viewportWidth);
+	$vw-context: ($viewportWidth*.01) * 1px;
+	@return ($pixels/$vw-context) * 1vw;
 }
 
 @function vh($pixels, $viewportHeight) {
-  $vh-context: ($viewportHeight*.01) * 1px;
-  @return ($pixels/$vh-context) * 1vh;
+	$vh-context: ($viewportHeight*.01) * 1px;
+	@return ($pixels/$vh-context) * 1vh;
 }
 
 //--------------------------------------------------------------
 //  Assets paths functions
 //--------------------------------------------------------------
 @function path($asset) {
-  @return unquote("#{$base-path}#{$asset}");
+	@return unquote("#{$base-path}#{$asset}");
 }
 
 @function asset($type, $file) {
-  @return url($base-path + $type + '/' + $file);
+	@return url($base-path + $type + '/' + $file);
 }
 
 @function image($file) {
-  @return asset('images', $file);
+	@return asset('images', $file);
 }
 
 @function font($file) {
-  @return asset('fonts', $file);
+	@return asset('fonts', $file);
 }
