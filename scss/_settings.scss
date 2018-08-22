@@ -1,0 +1,36 @@
+$base-path: '../assets/';
+
+//Grid
+$container-base-width: 1920px;
+$grid-columns: 12;
+$grid-gutter: 30px;
+
+// Fonts / Typography
+$font-base: sans-serif;
+$font-browser-context: 16px;
+$browser-desktop-context: 1920px;
+
+// Variant 1: Mediq Queries
+// Media queries
+$smart: "(min-width: 576px) and (max-width: 714px)";
+$tablet: "(min-width: 715px) and (max-width: 1049px)";
+$mobile: "(max-width: 719px)";
+
+$land: "(orientation: landscape) and";
+$port: "(orientation: portrait) and";
+$mobile_only: "(min-width: 576px) and (max-width: 714px)";
+$mobile_all: "(max-width: 1049px)";
+$minHeight: "(min-height: 800px)";
+
+// Variant 2 : breakpoints:
+
+$breakpoints: (
+	"phone": 400px,
+	"phone-wide": 480px,
+	"phablet": 560px,
+	"tablet-small": 640px,
+	"tablet": 768px,
+	"tablet-wide": 1024px,
+	"desktop": 1248px,
+	"desktop-wide": 1440px
+);
