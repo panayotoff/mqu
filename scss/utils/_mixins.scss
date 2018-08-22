@@ -120,13 +120,17 @@
 	}
 }
 
-//--------------------------------------------------------------
-//	Above or below below certain breakpoint
-//--------------------------------------------------------------
 @mixin above($widthOrBreakpoint, $includeWidth:false) {
-
+  @if ($includeWidth == false) {
+    $widthOrBreakpoint: $widthOrBreakpoint +1px;
+  }
+  @include min-width($widthOrBreakpoint) {
+    @content;
+  }
 }
 
 @mixin below($widthOrBreakpoint, $includeWidth:false) {
-
+  @include max-width($widthOrBreakpoint) {
+    @content;
+  }
 }

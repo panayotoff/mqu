@@ -19,21 +19,24 @@
 	}
 }
 
-@function em($pixels, $context: $font-browser-context) {
-	$context: strip-unit($context);
-	@return ($pixels / $font-browser-context) * 1em;
+@function em($pixels, $context:$font-browser-context) {
+  $context: strip-unit($context);
+  @return ($pixels / $font-browser-context) * 1em;
 }
 
-@function vw($pixels, $viewportWidth: $browser-desktop-context) {
-	$viewportWidth: strip-unit($viewportWidth);
-	$vw-context: ($viewportWidth*.01) * 1px;
-	@return ($pixels/$vw-context) * 1vw;
+@function vw($pixels, $viewportWidth:$browser-desktop-context) {
+  $viewportWidth: strip-unit($viewportWidth);
+  $vw-context: ($viewportWidth*.01) * 1px;
+  @return ($pixels/$vw-context) * 1vw;
 }
 
 @function vh($pixels, $viewportHeight) {
-	$viewportHeight: strip-unit($viewportHeight);
-	$vh-context: ($viewportHeight*.01) * 1px;
-	@return ($pixels/$vh-context) * 1vh;
+  $vh-context: ($viewportHeight*.01) * 1px;
+  @return ($pixels/$vh-context) * 1vh;
+}
+
+@function lh($line-height, $font-size) {
+  @return strip-unit($line-height/$font-size);
 }
 
 //--------------------------------------------------------------
