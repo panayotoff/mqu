@@ -104,6 +104,11 @@
 // 	Now breakpoints
 // 	See https://engageinteractive.co.uk/blog/top-10-scss-mixins
 //	http://www.adrenalinmedia.com.au/the-agency/insights/this-changes-everything-css-fluid-properties.aspx
+//	https://codepen.io/dbox/pen/meaMba
+//	https://hackernoon.com/4-techniques-for-responsive-font-sizing-with-scss-f663791c62f0
+//	https://css-tricks.com/snippets/css/fluid-typography/
+//	https://medium.com/@jakobud/css-polyfluidsizing-using-calc-vw-breakpoints-and-linear-equations-8e15505d21ab
+// 	https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/
 
 @mixin breakpoint($width, $type: min) {
 	@if map_has_key($breakpoints, $width) {
