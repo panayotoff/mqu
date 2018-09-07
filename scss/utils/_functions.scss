@@ -1,59 +1,62 @@
 @import "../settings";
 
 @function strip-unit($value) {
-	@return $value / ($value * 0 + 1);
+  @if type-of($value) == "number" and not unitless($value) {
+    @return $value / ($value * 0 + 1);
+  }
+  @return $value;
+}
+
+@function rat($prop, $context) {
+  @return (strip-unit($prop)/strip-unit($context));
 }
 
 //--------------------------------------------------------------
 //  Liquid styles
 //--------------------------------------------------------------
-@function fixed-to-fluid($target-width, $context-width:false) {
-	//Process ratio
-	@if (type-of($target-width) == "number" and unitless($target-width) and $context-width == false) {
-		@return percentage($target-width);
-	}
-
-	//Process target and context
-	@if (comparable($target-width, $context-width)) {
-		@return percentage($target-width / $context-width);
-	}
+@function fluid($min, $max, $start, $end) {
+  $multiplier: ($max - $min) / ($end - $start) * 100;
+  $adder: ($min * $end - $max * $start) / ($end - $start);
+  @return calc(#{$multiplier + 0vw} + #{$adder + 0px});
 }
 
 @function em($pixels, $context:$font-browser-context) {
-  $context: strip-unit($context);
-  @return ($pixels / $font-browser-context) * 1em;
+  @return rat($pixels, $context) * 1em;
 }
 
-@function vw($pixels, $viewportWidth:$browser-desktop-context) {
-  $viewportWidth: strip-unit($viewportWidth);
-  $vw-context: ($viewportWidth*.01) * 1px;
-  @return ($pixels/$vw-context) * 1vw;
+@function rem($pixels, $context:$font-browser-context) {
+  @return rat($pixels, $context) * 1rem;
 }
 
-@function vh($pixels, $viewportHeight) {
-  $vh-context: ($viewportHeight*.01) * 1px;
-  @return ($pixels/$vh-context) * 1vh;
+@function vw($pixels, $viewport-width:$browser-desktop-context) {
+  $vw-context: ($viewport-width*.01) * 1px;
+  @return rat($pixels, $vw-context) * 1vw;
+}
+
+@function vh($pixels, $viewport-height) {
+  $vh-context: ($viewport-height*.01) * 1px;
+  @return rat($pixels, $vh-context) * 1vh;
 }
 
 @function lh($line-height, $font-size) {
-  @return strip-unit($line-height/$font-size);
+  @return rat($line-height, $font-size);
 }
 
 //--------------------------------------------------------------
-//  Assets paths functions
+//  Assets handling
 //--------------------------------------------------------------
 @function path($asset) {
-	@return unquote("#{$base-path}#{$asset}");
+  @return $base-path + $asset;
 }
 
 @function asset($type, $file) {
-	@return url($base-path + $type + '/' + $file);
+  @return url($base-path + $type + '/' + $file);
 }
 
 @function image($file) {
-	@return asset('images', $file);
+  @return asset('images', $file);
 }
 
 @function font($file) {
-	@return asset('fonts', $file);
+  @return asset('fonts', $file);
 }

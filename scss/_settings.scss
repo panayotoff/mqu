@@ -24,16 +24,3 @@ $port: "(orientation: portrait) and";
 $mobile_only: "(min-width: 576px) and (max-width: 714px)";
 $mobile_all: "(max-width: 1049px)";
 $minHeight: "(min-height: 800px)";
-
-// Variant 2 : breakpoints:
-
-$breakpoints: (
-	"phone": 400px,
-	"phone-wide": 480px,
-	"phablet": 560px,
-	"tablet-small": 640px,
-	"tablet": 768px,
-	"tablet-wide": 1024px,
-	"desktop": 1248px,
-	"desktop-wide": 1440px
-);

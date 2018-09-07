@@ -5,3 +5,14 @@
 @import "base/base";
 @import "components/components";
 @import "pages/pages";
+
+body {
+  background-color: lightgoldenrodyellow;
+  @include between(500px, 900px) {
+    background-color: aqua;
+  }
+}
+
+a {
+  background-image: url(path('test.jpg'));
+}
