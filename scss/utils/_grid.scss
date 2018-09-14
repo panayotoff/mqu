@@ -44,8 +44,8 @@
 }
 
 @mixin make-col-size($size, $columns:$grid-columns) {
-	flex: 0 0 fixed-to-fluid($size / $columns);
-	max-width: fixed-to-fluid($size / $columns);
+	flex: 0 0 rat($size / $columns);
+	max-width: rat($size / $columns);
 }
 
 @mixin make-col($size, $columns: $grid-columns, $make-col-ready: false) {
@@ -57,13 +57,13 @@
 }
 
 @mixin make-col-offset($size, $columns: $grid-columns) {
-	margin-left: fixed-to-fluid($size / $columns);
+	margin-left: rat($size / $columns);
 }
 
 @mixin make-col-push($size, $columns: $grid-columns) {
-	left: if($size > 0, fixed-to-fluid($size / $columns), auto);
+	left: if($size > 0, rat($size / $columns), auto);
 }
 
 @mixin make-col-pull($size, $columns: $grid-columns) {
-	right: if($size > 0, fixed-to-fluid($size / $columns), auto);
+	right: if($size > 0, rat($size / $columns), auto);
 }
