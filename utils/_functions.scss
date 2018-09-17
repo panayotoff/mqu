@@ -28,7 +28,7 @@
   @return rat($pixels, $context) * 1rem;
 }
 
-@function vw($pixels, $viewport-width:$browser-desktop-context) {
+@function vw($pixels, $viewport-width:$desktop-width) {
   $vw-context: ($viewport-width*.01) * 1px;
   @return rat($pixels, $vw-context) * 1vw;
 }

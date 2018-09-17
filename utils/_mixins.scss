@@ -38,9 +38,8 @@
   position: $position;
 }
 
-// FIXME
 @mixin responsive-ratio($width, $height, $pseudo: false) {
-  $padding: unquote(( $height / $width ) * 100 + '%'); // Percentage?
+  $padding: unquote(( $height / $width ) * 100 + '%');
   @if $pseudo {
     &:before {
       @include pseudo($position: relative);
@@ -78,7 +77,7 @@
   }
 }
 
-@mixin fluid-property($property, $min, $max, $start: $browser-mobile-context, $end: $browser-desktop-context, $clip: true, $clipAtStart: true, $clipAtEnd: true) {
+@mixin fluid-property($property, $min, $max, $start: $mobile-width, $end: $desktop-width, $clip: true, $clipAtStart: true, $clipAtEnd: true) {
   $formula: fluid($min, $max, $start, $end);
   #{$property}: $formula;
 

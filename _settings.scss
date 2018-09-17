@@ -9,11 +9,12 @@ $grid-gutter: 30px;
 $font-base: sans-serif;
 $font-browser-context: 16px;
 
-//? Use the desktop and mobile context to calculate breakpoints?
-$browser-mobile-context: 375px;
-$browser-desktop-context: 1920px;
+$desktop-width: 1440px;
+$desktop-height: 1440px;
+$tablet-width: 1024px;
+$tablet-portrait-width: 768px;
+$mobile-width: 375px;
 
-// Media queries
 $smart: "(min-width: 576px) and (max-width: 714px)";
 $tablet: "(min-width: 715px) and (max-width: 1049px)";
 $mobile: "(max-width: 719px)";
@@ -22,4 +23,4 @@ $land: "(orientation: landscape) and";
 $port: "(orientation: portrait) and";
 $mobile_only: "(min-width: 576px) and (max-width: 714px)";
 $mobile_all: "(max-width: 1049px)";
-$minHeight: "(min-height: 800px)";
+$min_height: "(min-height: 800px)";
