@@ -1,26 +1,26 @@
 $base-path: '../assets/';
 
 //Grid
-$container-base-width: 1920px;
-$grid-columns: 12;
-$grid-gutter: 30px;
+$container-base-width: 1920px !default;
+$grid-columns: 12 !default;
+$grid-gutter: 30px !default;
 
 // Fonts / Typography
-$font-base: sans-serif;
-$font-browser-context: 16px;
+$font-base: sans-serif !default; 
+$font-browser-context: 16px !default;
 
-$desktop-width: 1440px;
-$desktop-height: 1440px;
-$tablet-width: 1024px;
-$tablet-portrait-width: 768px;
-$mobile-width: 375px;
+$desktop-width: 1440px !default;
+$desktop-height: 1440px !default;
+$tablet-width: 1024px !default;
+$tablet-portrait-width: 768px !default;
+$mobile-width: 375px !default;
 
-$smart: "(min-width: 576px) and (max-width: 714px)";
-$tablet: "(min-width: 715px) and (max-width: 1049px)";
-$mobile: "(max-width: 719px)";
+$smart: "(min-width: 576px) and (max-width: 714px)" !default;
+$tablet: "(min-width: 715px) and (max-width: 1049px)" !default;
+$mobile: "(max-width: 719px)" !default;
 
-$land: "(orientation: landscape) and";
-$port: "(orientation: portrait) and";
-$mobile_only: "(min-width: 576px) and (max-width: 714px)";
-$mobile_all: "(max-width: 1049px)";
-$min_height: "(min-height: 800px)";
+$land: "(orientation: landscape) and" !default;
+$port: "(orientation: portrait) and" !default;
+$mobile_only: "(min-width: 576px) and (max-width: 714px)" !default;
+$mobile_all: "(max-width: 1049px)" !default;
+$min_height: "(min-height: 800px)" !default;
