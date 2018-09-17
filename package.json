@@ -1,0 +1,9 @@
+{
+  "name": "mqu",
+  "version": "0.0.1",
+  "description": "Mqu.scss is a helper SCSS library used inhouse in onload.agency",
+  "main": "index.js",
+  "repository": "https://github.com/panayotov/mqu.git",
+  "author": "Chris <chris@onload.agency>",
+  "license": "MIT"
+}
