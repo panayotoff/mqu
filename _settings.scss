@@ -9,18 +9,30 @@ $grid-gutter: 30px !default;
 $font-base: sans-serif !default; 
 $font-browser-context: 16px !default;
 
-$desktop-width: 1440px !default;
-$desktop-height: 1440px !default;
-$tablet-width: 1024px !default;
-$tablet-portrait-width: 768px !default;
-$mobile-width: 375px !default;
+// Spacings, used to generate variants
+$spacings: (5, 10, 15, 20, 25, 30, 50, 60, 75, 100, 120, 150, 200);
 
-$smart: "(min-width: 576px) and (max-width: 714px)" !default;
-$tablet: "(min-width: 715px) and (max-width: 1049px)" !default;
-$mobile: "(max-width: 719px)" !default;
+// Desktop context
+$desktop-width: 1440px;
+$desktop-height: 1440px;
+$desktop-laptop-width: 1270px;
 
-$land: "(orientation: landscape) and" !default;
-$port: "(orientation: portrait) and" !default;
-$mobile_only: "(min-width: 576px) and (max-width: 714px)" !default;
-$mobile_all: "(max-width: 1049px)" !default;
-$min_height: "(min-height: 800px)" !default;
+//	Mobile / Tablet context
+$tablet-width: 1050px;
+$tablet-portrait-width: 715px;
+$mobile-width: 576px;
+
+$min715: "(min-width: 715px)";
+$min1270: "(min-width: 1280px)";
+$min1366: "(min-width: 1367px)";
+$min1440: "(min-width: 1450px)";
+$min1660: "(min-width: 1661px)";
+$min1900: "(min-width: 1980px)";
+
+$smart: "(min-width: #{$mobile-width}) and (max-width: #{$tablet-portrait-width - 1px})";
+$tablet: "(min-width: #{$tablet-portrait-width}) and (max-width: #{$desktop-laptop-width - 1px})";
+$mobile: "(max-width: #{$mobile-width - 1px})";
+$mobile_all: "(max-width: #{$tablet-portrait-width - 1px})";
+
+$land: "(orientation: landscape) and";
+$port: "(orientation: portrait) and";

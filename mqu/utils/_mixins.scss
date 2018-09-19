@@ -51,6 +51,24 @@
   }
 }
 
+//	@include variant(pt, s, 10, padding-top, 10px); => .pt-s-10 {padding-top: 10px;}
+@mixin variant($name, $infix, $variant, $property, $value) {
+	.#{$name}#{infix($infix)}#{infix($variant)} {
+		#{$property}: #{$value};
+	}
+}
+
+@mixin variants($infix:false, $spacings:()) {
+	@each $spacing in $spacings {
+		@include variant('pt', $infix, $spacing, padding-top, rem($spacing));
+		@include variant('pb', $infix, $spacing, padding-bottom, rem($spacing));
+		@include variant('pl', $infix, $spacing, padding-left, rem($spacing));
+		@include variant('pr', $infix, $spacing, padding-right, rem($spacing));
+		@include variant('mt', $infix, $spacing, margin-top, rem($spacing));
+		@include variant('mb', $infix, $spacing, margin-bottom, rem($spacing));
+	}
+}
+
 @mixin media($query) {
   @media #{$query} {
     @content;
