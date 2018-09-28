@@ -1,4 +1,2 @@
 # mqu
-Mqu ( Miaow ) is rapid development SCSS library
-
-Mqu provides components and basic styles, so it can be easily built upon. 
+Mqu ( meow ) is minimal SCSS / JS library for building web apps
