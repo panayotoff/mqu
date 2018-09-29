@@ -3,67 +3,67 @@
 @import "mixins";
 
 @mixin center($width:false) {
-	@if (not unitless($width)) {
-		width: 100%;
-		max-width: $width;
-	}
-	margin-left: auto;
-	margin-right: auto;
+  @if (not unitless($width)) {
+    width: 100%;
+    max-width: $width;
+  }
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @mixin make-container($container-width:false) {
-	position: relative;
-	@include center($container-width);
-	padding-right: ($grid-gutter / 2);
-	padding-left: ($grid-gutter / 2);
+  position: relative;
+  @include center($container-width);
+  padding-right: ($grid-gutter / 2);
+  padding-left: ($grid-gutter / 2);
 }
 
 // When centered within container, this will break out of it
 @mixin make-container-breakout-100vw {
-	width: 100vw;
-	position: relative;
-	left: 50%;
-	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 @mixin make-row() {
-	display: flex;
-	flex-wrap: wrap;
-	margin-right: ($grid-gutter / -2);
-	margin-left: ($grid-gutter / -2);
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: ($grid-gutter / -2);
+  margin-left: ($grid-gutter / -2);
 }
 
 @mixin make-col-ready() {
-	position: relative;
-	width: 100%;
-	min-height: 1px;
-	padding-right: ($grid-gutter / 2);
-	padding-left: ($grid-gutter / 2);
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: ($grid-gutter / 2);
+  padding-left: ($grid-gutter / 2);
 }
 
 @mixin make-col-size($size, $columns:$grid-columns) {
-	flex: 0 0 percentage($size / $columns);
-	max-width: percentage($size / $columns);
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
 }
 
 @mixin make-col($size, $columns: $grid-columns, $make-col-ready: false) {
-	@include make-col-size($size, $columns);
+  @include make-col-size($size, $columns);
 
-	@if ($make-col-ready == true) {
-		@include make-col-ready;
-	}
+  @if ($make-col-ready == true) {
+    @include make-col-ready;
+  }
 }
 
 @mixin make-col-offset($size, $columns: $grid-columns) {
-	margin-left: percentage($size / $columns);
+  margin-left: percentage($size / $columns);
 }
 
 @mixin make-col-push($size, $columns: $grid-columns) {
-	left: if($size > 0, percentage($size / $columns), auto);
+  left: if($size > 0, percentage($size / $columns), auto);
 }
 
 @mixin make-col-pull($size, $columns: $grid-columns) {
-	right: if($size > 0, percentage($size / $columns), auto);
+  right: if($size > 0, percentage($size / $columns), auto);
 }

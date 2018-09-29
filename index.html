@@ -1,12 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Mqu.js</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mqu.js</title>
+  <link rel="stylesheet" href="dist/style.css">
 </head>
 <body>
 
+<h1>Hello world</h1>
+
+<div class="app" data-component="app" data-options='{"foo": "gyz", "boo": "bum"}'>
+  <div> I am app <strong data-ref="strong">component</strong></div>
+
+  <p> I should be
+    <button data-ref="pref">Prev</button>
+  </p>
+  <p> I should be
+    <button data-ref="next">Next</button>
+  </p>
+  
+  <ul>
+    <li data-ref="list">List 1</li>
+    <li data-ref="list">List 2</li>
+    <li data-ref="list">List 3</li>
+    <li data-ref="list">List 4</li>
+    <li data-ref="list">List 5</li>
+  </ul>
+
+</div>
+
+<div>I am just random div</div>
+
+<script src="dist/index.js"></script>
 </body>
 </html>
